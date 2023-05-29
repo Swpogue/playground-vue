@@ -14,19 +14,19 @@
             Then use the index to print the players place in the collection.
           </p>
           <!-- add the v-for to player-card -->
-          <div class="player-card text-center">
+          <div class="player-card text-center" v-for="player in state.players">
             <h5>{{}}</h5>
             <div>
-              <img class="img" src="" />
+              <img class="img" src="player.photos" />
             </div>
             <div>
-              <span>{{}}</span>
+              <span>{{player.name}}</span>
             </div>
             <div>
-              <span>{{}}</span>
+              <span>{{player.position}}</span>
             </div>
             <div>
-              <span>{{}}</span>
+              <span>{{player.number}}</span>
             </div>
           </div>
         </div>
@@ -39,7 +39,7 @@
             value contained at that key.
           </p>
           <div class="blog" v-for="(value, key) in state.blog" :key="key">
-            <p>{{}}: {{}}</p>
+            <p>{{key}}: {{value}}</p>
           </div>
         </div>
       </div>
@@ -58,23 +58,23 @@ export default {
       blog: {
         title: "Using v-for in Vue",
         description: "How to use a v-for directive in Vue.",
-        author: "Mick",
+        author: "Mickey Mouse",
       },
       players: [
         {
-          photo: "https://robohash.org/Mick",
+          photos: "https://robohash.org/Mick",
           name: "Mick",
           position: "WR",
           number: 4,
         },
         {
-          photo: "https://robohash.org/Jeremy",
+          photos: "https://robohash.org/Jeremy",
           name: "Jeremy",
           position: "TE",
           number: 13,
         },
         {
-          photo: "https://robohash.org/Jake",
+          photos: "https://robohash.org/Jake",
           name: "Jake",
           position: "QB",
           number: 1,
